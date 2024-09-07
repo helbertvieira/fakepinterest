@@ -90,10 +90,12 @@
 
           <div class="div-botao">
             {{form.botao_confirmacao(class="botao-login")}}<!--não precisa de um label-->
-            <a href="{{ url_for('criarconta')}}" class="link-criarconta">Não tem uma conta? Crie aqui</a>
+            <a href="{{ url_for('criarconta') }}" class="link-criarconta">Não tem uma conta? Crie aqui</a>
           </div>
+
         </form>
         {% endblock %}
+        
       </div>
     </div>
   </body>

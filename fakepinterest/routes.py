@@ -20,11 +20,10 @@ def homepage():
 
 @app.route("/criarconta", methods=["GET", "POST"])
 def criarconta():
-    formcriarconta = FormCriarConta()
-    
+    formcriarconta = FormCriarConta()    
     if formcriarconta.validate_on_submit():
-        senha_criptografada = bcrypt.generate_password_hash(formcriarconta.senha.data).decode("utf-8")
-        usuario = Usuario(username=formcriarconta.username.data, senha=senha_criptografada, email=formcriarconta.email.data)
+        senha = bcrypt.generate_password_hash(formcriarconta.senha.data).decode("utf-8")
+        usuario = Usuario(username=formcriarconta.username.data, senha=senha, email=formcriarconta.email.data)
         database.session.add(usuario)
         database.session.commit()
         login_user(usuario, remember=True)
