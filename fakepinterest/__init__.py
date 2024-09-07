@@ -6,7 +6,7 @@ import os
 
 
 app=Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASDE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABADE_URL")#Altera a variavel para o link do external no Render, roda criar banco uma única vez pra criar o banco e depois volta a variavel normal
 app.config["SECRET_KEY"] = "79d66f3e1defe9f4a71bf7cc6b5641fa"
 app.config["UPLOAD_FOLDER"] = "static/fotos_posts"
 
